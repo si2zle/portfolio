@@ -21,6 +21,9 @@
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "testMatch": [
+      "<rootDir>/Tests/__tests__/*.test.js"
+    ]
   }
 }
