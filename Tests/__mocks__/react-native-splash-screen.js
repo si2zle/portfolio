@@ -1,10 +1,8 @@
 export default {
-    show: jest.fn().mockImplementation(() =>
-    {
+    show: jest.fn().mockImplementation(() => {
         console.log('show splash screen');
     }),
-    hide: jest.fn().mockImplementation(() =>
-    {
+    hide: jest.fn().mockImplementation(() => {
         console.log('hide splash screen');
     }),
 }
