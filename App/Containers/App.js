@@ -18,19 +18,16 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props>
-{
-    componentDidMount()
-    {
+export default class App extends Component<Props> {
+    componentDidMount() {
         SplashScreen.hide();
     }
 
-    render()
-    {
+    render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started do some cool stuff</Text>
+                <Text style={styles.instructions}>To get started do some cool stuff here</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
             </View>
         );

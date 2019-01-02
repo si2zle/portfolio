@@ -1,9 +1,13 @@
+import {mount} from 'enzyme';
 import React from 'react';
 import App from '../../App/Containers/App';
-import renderer from 'react-test-renderer';
 
-test('renders correctly', () =>
-{
-    const tree = renderer.create(<App/>).toJSON();
-    expect(tree).toMatchSnapshot();
+describe('App', () => {
+    describe('#Text', () => {
+        it('should render the the text Welcome to React Native! in our first text tag', () => {
+            const app = mount(<App/>);
+            const text = app.find('Text').at(0).text();
+            expect(text).toEqual('Welcome to React Native!');
+        });
+    });
 });
