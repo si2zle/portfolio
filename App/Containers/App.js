@@ -8,6 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
+
 import SplashScreen from 'react-native-splash-screen';
 
 const instructions = Platform.select({
@@ -18,7 +20,8 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+
+class HomeScreen extends Component<Props> {
 
     componentDidMount() {
         SplashScreen.hide();
@@ -34,6 +37,17 @@ export default class App extends Component<Props> {
         );
     }
 }
+
+class SettingsScreen extends React.Component {
+    render() {
+        return (
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                <Text>Settings!</Text>
+            </View>
+        );
+    }
+}
+
 
 const styles = StyleSheet.create({
     container: {
@@ -53,3 +67,9 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+const TabNavigator = createBottomTabNavigator({
+    Home: HomeScreen, Settings: SettingsScreen,
+});
+
+export default createAppContainer(TabNavigator);
